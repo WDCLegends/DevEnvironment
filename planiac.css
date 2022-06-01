@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+}
+header, footer {
+    padding: .8em;
+    background-color:  #93E9BE;
+    color: #333533;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #333533;
+}
+.headerbuttons {
+    float: right;
+    margin-top: -4em;
+}
+    
+h1:hover{
+    color:white;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+h1{
+    transition: all .3s ease-in-out;
+    text-align: left;
+}
+
+.headerbutton:hover {
+    color:white;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.headerbutton {
+    max-width: 8em;
+    padding: .6em;
+    margin-left: .4em;
+    border-radius: .5em;
+    border: .1em solid black;
+    background-color: #00b7eb;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all .3s ease-in-out;
+}
+body {
+    color: #333533;
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.eventinputbox {
+    font-family: 'Open Sans', sans-serif;
+    font-size: medium;
+    font-weight:500;
+    padding: .5em;
+    border-radius: .5em;
+    border: .1em solid grey;
+}
+.insertdetails {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 13.5em;
+    margin-left: 1.5em;
+    border-right: 1px solid black;
+    padding-right: 1em;
+}
+.eventpreview {
+    flex-direction: column;
+    width: 25em;
+    display: flex;
+    align-items: left;
+    padding-left: 5%;
+    width: 50%;
+}
+.eventdescription {
+    max-width: 15em;
+    height: auto;
+    word-wrap: break-word;
+    text-align: left;
+    border-radius: .5em;
+    border: .1em solid black;
+    padding: .4em;
+}
+.eventbuttons {
+    margin-top: 1em;
+    align-items: left;
+    max-width: 8em;
+    height: auto;
+    padding: .6em;
+    border-radius: .5em;
+    border: .1em solid black;
+    background-color: #00b7eb;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+.inputdescs {
+    margin-top: 5%;
+    margin-bottom: .5em;
+}
+
+/* settings page css */
+.sections {
+    float: left;
+    top: 13%;
+    left: 0%;
+    position: absolute;
+    width: 5%;
+    height: 70%;
+    background: #93E9BE;
+    box-shadow: 3px 3px 10px
+    rgba(119, 119, 119,.5);
+    border: .lem solid #fff;
+    min-width: 6em;
+    max-width: 6em;
+    max-height: 42em;
+    min-height: 42em;
+    border-radius: .5em;
+    border: .1em solid black;
+}
+
+nav a:not(.dropper-home) {
+    list-style: none;
+    padding: 35px;
+    color: black;
+    font-size: 2em;
+    display: block;
+    transition: all .3s ease-in-out;
+}
+nav a:hover {
+    color:white;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.settings{
+    flex-direction: column;
+    width: 25em;
+    display: flex;
+    align-items: left;
+    padding-left: 8em;
+    width: 100%;
+}
+
+.acceptbutton{
+    margin-top: 1em;
+    height: auto;
+    padding: .6em;
+    border-radius: .5em;
+    border: .1em solid black;
+    background-color: #50C878;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #333333;
+}
+.denybutton{
+    margin-top: 1em;
+    height: auto;
+    padding: .6em;
+    border-radius: .5em;
+    border: .1em solid black;
+    background-color: #cc0000;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #333333;
+}
+
+.acclink{
+    color: black;
+    transition: all .3s ease-in-out;
+}
+.acclink:hover{
+    color:green;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.inputset{
+    color: black;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: medium;
+    padding: .2em;
+    border-radius: .3em;
+    border: .1em solid grey;
+    width: 200px;
+}
+
+  /* Rounded Slider css from https://www.w3schools.com/howto/howto_css_switch.asp
+                <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+                </label> */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #333333;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.event-list{
+    margin-top: 1%;
+    margin-bottom: 0em;
+    border-radius: .5em;
+    border: .1em solid black;
+    background-color: #93E9BE;
+}
+
+.event-divider{
+    border: .05em solid black;
+}
+
+#dev{
+    display: inline-block;
+    width: 35em;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.drop-list{
+    color: black;
+    float: right;
+    display: inline-block;
+    height: 10em;
+    width: 7em;
+    margin-top: 0em;
+    margin-left: 1em;
+    margin-bottom: 0em;
+    margin-right: 1em;
+    border-radius: .5em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
+.eventbuttonsinnav {
+    margin-top: 1em;
+    align-items: left;
+    max-width: 7em;
+    min-width: 7em;
+    height: auto;
+    padding: .6em;
+    border-radius: .5em;
+    border: .1em solid black;
+    background-color: #00b7eb;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all .3s ease-in-out;
+}
+
+.eventbuttonsinnav:hover {
+    color:white;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.signup {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    top: 0;
+    background-color: #e1e5ed;
+}
+
+.login {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    top: 0;
+    background-color: #93E9BE;
+}
+
+.centred {
+    text-align: center;
+}
+
+.loginbutton {
+    margin-top: 1em;
+    align-items: left;
+    max-width: 8em;
+    height: auto;
+    padding: .6em;
+    border-radius: .5em;
+}
+
+.gobutton{
+    align-items: center;
+    margin-top: auto;
+    display: flex;
+    max-width: 10em;
+    min-width: 10em;
+    height: auto;
+    padding: .6em;
+    border-radius: .5em;
+    border: .1em solid black;
+    background-color: #00b7eb;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all .3s ease-in-out;
+    margin: auto;
+}
+
+.gobutton:hover {
+    color:darkgreen;
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: #93E9BE; 
+}

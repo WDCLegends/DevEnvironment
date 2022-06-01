@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" href="planiac.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="planiac.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/cbc3c8c3aa.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 onclick="window.location='home.html';">Planiac</h1>
+            <div class="headerbuttons">
+                <button class="headerbutton" onclick="window.location='addevent.html';">Create Event</button>
+                <button class="headerbutton" onclick="window.location='login.html';">Login/Signup</button>
+                <button class="headerbutton" onclick="window.location='settings.html';">Settings</button>
+            </div>
+        </header>
+        <main>
+            <div class="sections">
+            <h1 style="font-size:1.5em; padding:3px"> Settings </h1> <!-- Navigation list on left hand side of screen -->
+            <nav>
+            <a onclick="vueinst.user_seen = true; vueinst.notif_seen = false; vueinst.display_seen = false; vueinst.link_seen = false;"> <i class="fa-solid fa-user"></i> </a>
+            <a onclick="vueinst.notif_seen = true; vueinst.user_seen = false; vueinst.display_seen = false; vueinst.link_seen = false;"> <i class="fa-solid fa-bell"></i> </a>
+            <a onclick="vueinst.display_seen = true; vueinst.user_seen = false; vueinst.notif_seen = false; vueinst.link_seen = false;"> <i class="fa-solid fa-display"></i> </a>
+            <a onclick="vueinst.display_seen = false; vueinst.user_seen = false; vueinst.notif_seen = false; vueinst.link_seen = true;"> <i class="fa-solid fa-link"></i> </a>
+            </nav>
+            </div>
+            <div class=settings> <!-- All the pages for settings that are rendered depending on which button pushed from left menu (sections) -->
+                <div v-if="user_seen" class = "userset">
+                <h2> User Settings </h2>
+                <hr>
+                <h3> Username </h3>
+                <input type="text" class="inputset" value="username-var">
+                <h3> Email </h3>
+                <input type="text" class="inputset" value="email-var">
+                <h3> Password </h3>
+                <input type="text" class="inputset" value="Enter old Password">
+                <br>
+                <br>
+                <input type="text" class="inputset" value="Enter New Password">
+                <input type="text" class="inputset" value="Enter New Password Again">
+                <br>
+                <br>
+                <hr>
+                <button class="acceptbutton"> Save Changes </button>
+                <button class="denybutton"> Delete Account </button>
+                </div>
+                <div v-if="notif_seen" class = "notifset">
+                <h2> Notification Settings </h2>
+                <hr>
+                <h3> Email for Email Notifications </h3>
+                <input type="text" class="inputset" value="email-notifications-var">
+                <h3> Alert Frequency </h3>
+                  <select name="notif_freq" class="inputset"> <!-- Drop down menu containing notification frequency settings -->
+                    <option value="Day Before Event">Day Before Event</option>
+                    <option value="1 Week Before Event">1 Week Before Event</option>
+                    <option value="1 Month Before Event">1 Week Before Event</option>
+                    <option value="Never">Never</option>
+                </select>
+                <hr>
+                <button class="acceptbutton"> Save Changes </button>
+                </div>
+                <div v-if="display_seen" class = "displayset">
+                <h2> Display Settings </h2>
+                <hr>
+                <h3> Light / Dark Mode </h3>
+                <label class="switch"> <!-- A switch I found online and edited for light / dark mode -->
+                <input type="checkbox">
+                <span class="slider round"></span>
+                </label>
+                <hr>
+                </div>
+                <div v-if="link_seen" class = "linkset">
+                <h2> Account Link Settings </h2>
+                <hr>
+                <h3>  <i class="fa-brands fa-google"></i>oogle Account </h3>
+                <input type="text" class="inputset" value="google-email-var"> <a class="acclink"><i class="fa-solid fa-link"></i></a>
+                <h3>  <i class="fa-brands fa-facebook"></i>acebook Account </h3>
+                <input type="text" class="inputset" value="facebook-email-var"> <a class="acclink"><i class="fa-solid fa-link"></i></a>
+                <hr>
+                <button class="acceptbutton"> Save Changes </button>
+                </div>
+            </div>
+
+        </main>
+    </div>

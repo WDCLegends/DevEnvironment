@@ -1,0 +1,7 @@
+In order to gain more feedback on our initial design (as seen in sketches) we coded a small skeleton of the initial pages based on our designs and got feedback from other groups.
+
+The feedback said our initial designs were good but could be improved to further enhance the user experience.
+
+Specifically, the home page which was totally redesigned in order to show more to the user at once and follow fitts law.
+
+This proved to be beneficial as when we showed the new and improved page to the group they said it was much better and a website they would use and recommend.

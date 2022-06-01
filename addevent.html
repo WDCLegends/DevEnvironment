@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="planiac.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="planiac.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+       <header>
+            <h1 onclick="window.location='home.html';">Planiac</h1>
+            <div class="headerbuttons">
+                <button class="headerbutton" onclick="window.location='addevent.html';">Create Event</button>
+                <button class="headerbutton" onclick="window.location='login.html';">Login/Signup</button>
+                <button class="headerbutton" onclick="window.location='settings.html';">Settings</button>
+            </div>
+        </header>
+        <main>
+            <div class="insertdetails">
+                <h2>Event Details</h2>
+                <h3 style="margin-top: .2em;">Name</h3> <!--add vue for displaying name -->
+                <h4 class="inputdescs">Event name</h4>
+                <input type="text" class="eventinputbox" v-model="eventname" onfocus="this.value=''">
+                <h4 class="inputdescs">Event date</h4>
+                <input type="date" class="eventinputbox" v-model="eventdate">
+                <h4 class="inputdescs">Event time</h4>
+                <input type="time" class="eventinputbox" v-model="eventtime">
+                <h4 class="inputdescs">Event location</h4>
+                <input type="text" class="eventinputbox" v-model="location" onfocus="this.value=''">
+                <h4 class="inputdescs">Event description</h4>
+                <textarea rows="4" cols="60" class="eventinputbox" v-model="description" onfocus="this.value=''"></textarea>
+                <button class="eventbuttons">Confirm</button>
+            </div>
+    
+            <div class="eventpreview">
+                <h2>{{ eventname }}</h2> <!--add vue for displaying name -->
+                <h3>{{ eventdate | dateFormat('dddd.MMMM.DD')}} at {{ eventtime }}</h3> <!--add vue for displaying time -->
+                <h3>{{ location }}</h3> <!--add vue for displaying address -->
+                <h2 style="margin-bottom: 0em;">Event description</h4>
+                <p class="eventdescription"> {{ description }}</p> <!--add vue for displaying address -->
+            </div>
+        </main>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+.signup {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    top: 0;
+    background-color: #e1e5ed;
+    padding: 70px 0;
+}
+
+.login {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    top: 0;
+    background-color: #93E9BE;
+}
+
+.centred {
+    text-align: center;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.button {
+    margin-top: 1em;
+    align-items: left;
+    max-width: 8em;
+    height: auto;
+    padding: .6em;
+    border-radius: .5em;
+}
+
+header {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #333533;
+}
