@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="planiac.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="planiac.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans&display=swap" rel="stylesheet">
+<script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+<script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 onclick="window.location='home.html';">Planiac</h1>
+            <div class="headerbuttons">
+                <button class="headerbutton" onclick="window.location='addevent.html';">Create Event</button>
+                <button class="headerbutton" onclick="window.location='login.html';">Login/Signup</button>
+                <button class="headerbutton" onclick="window.location='settings.html';">Settings</button>
+            </div>
+        </header>
+        <main>
+            <div class="insertdetails">
+                <h2>Home</h2>
+                <h3 style="margin-top: .2em;">Upcoming events</h3> <!--add vue for displaying name -->
+                <div class="event-list">
+                    <div class="eventpreview">
+                        <h3>{{ eventname }}</h2> <!--add vue for displaying name -->
+                        <h3>{{ eventdate | dateFormat('dddd.MMMM.DD')}} at {{ eventtime }}</h3> <!--add vue for displaying time -->
+                        <h3>{{ location }}</h3> <!--add vue for displaying address -->
+                        <h3 class="inputdescs">Event description:</h3>
+                    </div>
+                    <hr class="event-divider">
+                    <div class="eventpreview">
+                        <h3>{{ eventname }}</h2> <!--add vue for displaying name -->
+                        <h3>{{ eventdate | dateFormat('dddd.MMMM.DD')}} at {{ eventtime }}</h3> <!--add vue for displaying time -->
+                        <h3>{{ location }}</h3> <!--add vue for displaying address -->
+                        <h3 class="inputdescs">Event description:</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="dev">
+                    <button id="authorize_button" class="gobutton" onclick="handleAuthClick()">Sign in to Google</button>
+                    
+                    <button id="signout_button" class="gobutton" onclick="handleSignoutClick()">Sign Out</button>
+            </div>
+            <div class="drop-list">
+                <button class="eventbuttonsinnav" href="/home.html/">
+                    About us
+                </button>
+                <button class="eventbuttonsinnav" href="/home.html/">
+                    Pricing
+                </button>
+                <button class="eventbuttonsinnav" href="/home.html/">
+                    Contact us
+                </button>
+                <button class="eventbuttonsinnav" href="/home.html/">
+                    Careers
+                </button>
+                <!--<nav class="dropper-home">
+                    <a href="/home.html/">About us</a>
+                    <hr class="event-divider">
+                    <a href="/home/">Pricing</a>
+                    <hr class="event-divider">
+                    <a href="/home/">Contact us</a>
+                    <hr class="event-divider">
+                    <a href="/home/">Careers</a>
+                </nav>-->
+            </div>
+            </div>
+
+
+
+        </main>
+
+    </div>
+
+</body>
+</html>
