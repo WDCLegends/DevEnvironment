@@ -355,7 +355,6 @@ nav a:hover {
 .gobutton{
     align-items: center;
     margin-top: auto;
-    margin-bottom: 2em;
     display: flex;
     max-width: 10em;
     min-width: 10em;
