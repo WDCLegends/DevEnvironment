@@ -143,3 +143,35 @@ var vueinst = new Vue({
        'Events:\n');
    document.getElementById('content').innerText = output;
  }
+
+ function checkAvailability(){
+     // Initialize an object with properties and methods
+    const targetEvent = {
+    date: '',
+    time: '',
+    isAvailable: true,
+    };
+
+// Use Object.create to pass properties
+    const thisEvent = Object.create(targetEvent);
+     const events = response.result.items;
+     if(events.start.date === thisEvent.date){
+        if(events.start.dateTime === thisEvent.Time){
+            for (let i = 0; i < events.timeMin; i++) { 
+                let j = 0;
+                if(events.start.dateTime === thisEvent.time){
+                    j++;
+                }
+                if(j>0){
+                    thisEvent.isAvailable = false;
+                }
+              }
+        }
+     }
+     if(thisEvent.isAvailable === false){
+        document.getElementById('content').innerText = 'You have another event at this time. Do you still wish to respond to this event?';
+     }
+     else{
+        document.getElementById('content').innerText = 'Event does not clash with google calendar.';
+     }
+ }
