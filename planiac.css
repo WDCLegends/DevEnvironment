@@ -376,3 +376,7 @@ nav a:hover {
     transform: scale(1.2);
     background-color: #93E9BE; 
 }
+
+#signout_button{
+    margin-top: 2em;
+}
